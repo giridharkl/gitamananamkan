@@ -1,27 +1,19 @@
 \documentclass[12pt,twoside,openright,a5paper]{book}
-\usepackage[margin=0.75in]{geometry}
-\usepackage{layout}
-\usepackage{pgffor}
-\usepackage{tocloft}
-\usepackage{fontspec}
-\usepackage{fancybox}
-\usepackage[skins]{tcolorbox}
-\usepackage{fancyhdr}
-\usepackage{setspace}
-\usepackage[utf8]{inputenc}
-\usepackage{polyglossia}
-\usepackage{changepage}% http://ctan.org/pkg/changepage
-  
-  \newskip\linepagesep \linepagesep 5pt\relax
-  \renewcommand\footrulewidth{0.5pt}
-  \def\vfootline{%
-    \begingroup\color{blue}\rule[-990pt]{20pt}{1000pt}\endgroup}
+\input{packages}
+\newskip\linepagesep \linepagesep 5pt\relax
+\renewcommand\footrulewidth{0.5pt}
+\def\vfootline{%
+    \begingroup
+        \color{blue}\rule[-990pt]{20pt}{1000pt}
+    \endgroup}
 
-\newfontfamily\kanfont[Script=Kannada]{Arial Unicode MS}
-\setmainfont[Script=Kannada]{Arial Unicode MS}
+\newfontfamily\kanfont[Script=Kannada]{AdishilaVedic}
+\newfontfamily\aksharfont[Script=Kannada]{AdishilaVedic}
+\setmainfont[Script=Kannada]{AdishilaVedic}
 \setmainlanguage{kannada}
 \setotherlanguages{english}
-
+\newfontfamily\kannadafont[Script=Kannada]{AdishilaVedic}
+\newfontfamily\kannadafontsf[Script=Kannada]{Arial Unicode MS}
 \fancyhf{}
   \fancyfoot[RO]{\vfootline\hskip\linepagesep\thepage}
   \fancyfoot[LE]{\thepage\hskip\linepagesep\vfootline}
@@ -36,26 +28,57 @@
     \fancyfoot[LE]{\thepage\hskip\linepagesep\vfootline}
     \renewcommand\headrulewidth{0pt}
   }
-
+\quotingsetup{font={itshape,footnotesize}}
 \title{\Huge \kanfont ಗೀತಾ ಮನನಂ\\Gita Mananam\\\small(ದೈನಂದಿನ ಸ್ಪೂರ್ತಿ ಹಾಗೂ ಆತ್ಮಾವಲೋಕನಕ್ಕಾಗಿ)}
 \author{\large \kanfont ಸ್ವಾಮಿ ನಿರ್ಗುಣಾನಂದಗಿರಿ\\Swamy Nirgunanandagiri}
 
 \renewcommand*\contentsname{\kanfont ವಿಷಯ ಸೂಚಿ}
 \addto{\captionsenglish}{\renewcommand*{\contentsname}{\kanfont ವಿಷಯ ಸೂಚಿ}}
 
+% Reduce space between TOC
+\setlength\cftparskip{-2pt}
+\setlength\cftbeforechapskip{2pt}
 \setcounter{secnumdepth}{-1}
+\chapterfont{\color{blue}}  % sets colour of chapters
+\setlength\parindent{0pt} % no-indent for entire file
+
 \include{./box-def.tex}
 
 \begin{document}
 \pagenumbering{roman}
 \maketitle
+\input{./chapters/copyright}
 \thispagestyle{empty}
 \tableofcontents
+\thispagestyle{empty}
+\thispagestyle{empty}
 \pagestyle{fancy}
 \chapter{\kanfont ಮುನ್ನುಡಿ}
-%\thispagestyle{empty}
 
+%\thispagestyle{empty}
+\chapter{\kanfont ಪ್ರಸ್ತಾವನೆ}
+\input{./chapters/introduction}
+\chapter{\kanfont ೧ ಅರ್ಜುನ ವಿಶಾದ ಯೋಗ}
 \pagenumbering{arabic}
+\chapter{\kanfont ೨ ಸಾಂಖ್ಯ ಯೋಗ}
+\chapter{\kanfont ೩ ಕರ್ಮ ಯೋಗ}
+\chapter{\kanfont ೪ ಜ್ಞಾನ ಯೋಗ}
+\chapter{\kanfont ೫ ಕರ್ಮ ಸನ್ಯಾಸ ಯೋಗ}
+\input{chapters/chap5}
+\chapter{\kanfont ೬ ಆತ್ಮಸಂಯಮ ಯೋಗ}
+\chapter{\kanfont ೭ ಜ್ಞಾನವಿಜ್ಞಾನ ಯೋಗ}
+\chapter{\kanfont ೮ ಅಕ್ಷರ ಬ್ರಹ್ಮ ಯೋಗ}
+\chapter{\kanfont ೯ ರಾಜವಿದ್ಯಾ ರಾಜಗುಹ್ಯ ಯೋಗ}
+\chapter{\kanfont ೧೦ ವಿಭೂತಿ ಯೋಗ}
+\chapter{\kanfont ೧೧ ವಿಶ್ವರೂಪದರ್ಶನ ಯೋಗ}
+\chapter{\kanfont ೧೨ ಭಕ್ತಿ ಯೋಗ}
+\chapter{\kanfont ೧೩ ಕ್ಷೇತ್ರಕ್ಷೇತ್ರಜ್ಞವಿಭಾಗ ಯೋಗ}
+\chapter{\kanfont ೧೪ ಗುಣತ್ರಯವಿಭಾಗ ಯೋಗ}
+\chapter{\kanfont ೧೫ ಪುರುಷೋತ್ತಮ ಯೋಗ}
+\chapter{\kanfont ೧೬ ದೈವಾಸುರಸಂಪದ್ವಿಭಾಗ ಯೋಗ}
+\chapter{\kanfont ೧೭ ಶ್ರದ್ಧಾತ್ರಯವಿಭಾಗ ಯೋಗ}
+\chapter{\kanfont ೧೮ ಮೋಕ್ಷಸಂನ್ಯಾಸ ಯೋಗ}
+
 \textenglish{namUmxru maYsUru.}
 
 ನಮ್ಮೂರು ಮೈಸೂರುನಮ್ಮೂರುಮೈಸೂರುನಮ್ಮೂರಮೈಸೂರುನಮ್ಮೂರುಮೈಸೂರುನಮ್ಮೂರುಮೈಸೂರುನಮ್ಮೂರುಮೈಸೂರು
@@ -63,7 +86,7 @@
 \emph{ನಮ್ಮೂರು ಮೈಸೂರು.}
 ಅಥ ಪ್ರಥಮೋऽಧ್ಯಾಯಃ ।\\
 \\
-ಧೃತರಾಷ್ಟ್ರ ಉವಾಚ ।\\
+\textbf{ಧೃತರಾಷ್ಟ್ರ ಉವಾಚ ।\\
 ಧರ್ಮಕ್ಷೇತ್ರೇ ಕುರುಕ್ಷೇತ್ರೇ ಸಮವೇತಾ ಯುಯುತ್ಸವಃ ।\\
-ಮಾಮಕಾಃ ಪಾಂಡವಾಶ್ಚೈವ ಕಿಮಕುರ್ವತ ಸಂಜಯ ॥ 1 ॥\\
+ಮಾಮಕಾಃ ಪಾಂಡವಾಶ್ಚೈವ ಕಿಮಕುರ್ವತ ಸಂಜಯ ॥ 1 ॥\\}
 \end{document}
