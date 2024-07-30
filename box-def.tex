@@ -1,3 +1,9 @@
+
+\newcommand\Linepage[1][0.25in]{% Change to suit
+  \vbox to \dimexpr\textheight-\pagetotal-#1\relax {% Let TeX do the work...
+    \leaders\hbox to \linewidth{\rule{0pt}{#1}\hrulefill}\vfil
+  }%
+}
 \newtcolorbox{inspiration}[2][]{%
   floatplacement=b,float, 
   enhanced,colback=white,colframe=purple,coltitle=black,
