@@ -1,9 +1,10 @@
 
-\newcommand\Linepage[1][0.25in]{% Change to suit
+\newcommand\Linepage[1][0.40in]{% Change to suit
   \vbox to \dimexpr\textheight-\pagetotal-#1\relax {% Let TeX do the work...
     \leaders\hbox to \linewidth{\rule{0pt}{#1}\hrulefill}\vfil
   }%
 }
+
 \newtcolorbox{inspiration}[2][]{%
   floatplacement=b,float, 
   enhanced,colback=white,colframe=purple,coltitle=black,
@@ -17,7 +18,6 @@
   title=#2,#1
 }
 \newtcolorbox{mananam}[2][]{%
-  floatplacement=t,float,
   enhanced,colback=white,colframe=teal,coltitle=black,
   sharp corners,boxrule=1pt, width=\textwidth,
   fonttitle=\sffamily\scshape\color{purple},
