@@ -7,12 +7,12 @@
         \color{blue}\rule[-990pt]{20pt}{1000pt}
     \endgroup}
 
-\newfontfamily\kanfont[Script=Kannada]{AdishilaVedic}
-\newfontfamily\aksharfont[Script=Kannada]{AdishilaVedic}
-\setmainfont[Script=Kannada]{AdishilaVedic}
+\newfontfamily\kanfont[Script=Kannada]{Arial Unicode MS}
+\newfontfamily\aksharfont[Script=Kannada]{Arial Unicode MS}
+\setmainfont[Script=Kannada]{Arial Unicode MS}
 \setmainlanguage{kannada}
 \setotherlanguages{english}
-\newfontfamily\kannadafont[Script=Kannada]{AdishilaVedic}
+\newfontfamily\kannadafont[Script=Kannada]{Arial Unicode MS}
 \newfontfamily\kannadafontsf[Script=Kannada]{Arial Unicode MS}
 \fancyhf{}
   \fancyfoot[RO]{\vfootline\hskip\linepagesep\thepage}
@@ -43,14 +43,19 @@
 \setlength\parindent{0pt} % no-indent for entire file
 \date{} % clear date
 \makeindex[intoc]
+\makeglossaries
+
 \include{./box-def.tex}
 % commands
 \definecolor{aurometalsaurus}{rgb}{0.43, 0.5, 0.5}
 \newcommand{\slcol}[1]{{\color{red}{#1}}}
 \newcommand{\cquote}[1]{\begin{quoting}{\color{aurometalsaurus}{#1}}\end{quoting}}
+% Generate the glossary
+
 \begin{document}
 \pagenumbering{roman}
 \maketitle
+
 \input{./chapters/copyright}
 \thispagestyle{empty}
 \tableofcontents
@@ -60,13 +65,16 @@
 \chapter{\kanfont ಮುನ್ನುಡಿ}
 
 %\thispagestyle{empty}
+\begin{onehalfspace} 
 \chapter{\kanfont ಪ್ರಸ್ತಾವನೆ}
 \input{./chapters/introduction}
+\end{onehalfspace}
 \chapter{\kanfont ೧ ಅರ್ಜುನ ವಿಶಾದ ಯೋಗ}
 \pagenumbering{arabic}
 \input{./chapters/chap1}
 \makeatletter\@openrightfalse
 \chapter{\kanfont ೨ ಸಾಂಖ್ಯ ಯೋಗ}
+\input{./chapters/chap2}
 \chapter{\kanfont ೩ ಕರ್ಮ ಯೋಗ}
 \chapter{\kanfont ೪ ಜ್ಞಾನ ಯೋಗ}
 \chapter{\kanfont ೫ ಕರ್ಮ ಸನ್ಯಾಸ ಯೋಗ}
@@ -84,5 +92,9 @@
 \chapter{\kanfont ೧೬ ದೈವಾಸುರಸಂಪದ್ವಿಭಾಗ ಯೋಗ}
 \chapter{\kanfont ೧೭ ಶ್ರದ್ಧಾತ್ರಯವಿಭಾಗ ಯೋಗ}
 \chapter{\kanfont ೧೮ ಮೋಕ್ಷಸಂನ್ಯಾಸ ಯೋಗ}
+\input{./glossaries-kan}
+\gls{utc} is 3 hours behind \gls{adt} and 10 hours ahead of \gls{est}.
+
+\printglossaries
 \printindex
 \end{document}
