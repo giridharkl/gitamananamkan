@@ -7,13 +7,15 @@
         \color{blue}\rule[-990pt]{20pt}{1000pt}
     \endgroup}
 
-\newfontfamily\kanfont[Script=Kannada]{Arial Unicode MS}
+
 \newfontfamily\aksharfont[Script=Kannada]{Arial Unicode MS}
 \setmainfont[Script=Kannada]{Arial Unicode MS}
 \setmainlanguage{kannada}
 \setotherlanguages{english}
 \newfontfamily\kannadafont[Script=Kannada]{Arial Unicode MS}
 \newfontfamily\kannadafontsf[Script=Kannada]{Arial Unicode MS}
+\newfontfamily\kanfont[Script=Kannada]{Arial Unicode MS}
+\newfontfamily\mananamfont[Script=Kannada]{NudiUni08k}
 \fancyhf{}
   \fancyfoot[RO]{\vfootline\hskip\linepagesep\thepage}
   \fancyfoot[LE]{\thepage\hskip\linepagesep\vfootline}
@@ -59,6 +61,10 @@
 \input{./chapters/copyright}
 \thispagestyle{empty}
 \tableofcontents
+
+\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=east,inner sep=0pt] at (current page text area.east|-0cm,13.5cm) {\includegraphics[height=4cm]{./images/pic1.jpg}};
+\end{tikzpicture}
 \thispagestyle{empty}
 \thispagestyle{empty}
 \pagestyle{fancy}
