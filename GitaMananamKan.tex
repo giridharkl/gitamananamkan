@@ -1,5 +1,6 @@
 \documentclass[12pt,twoside,openright,a5paper]{book}
 \input{packages}
+
 \newskip\linepagesep \linepagesep 5pt\relax
 \renewcommand\footrulewidth{0.5pt}
 \def\vfootline{%
@@ -44,8 +45,10 @@
 \chapterfont{\color{blue}}  % sets colour of chapters
 \setlength\parindent{0pt} % no-indent for entire file
 \date{} % clear date
-\makeindex[intoc]
-\makeglossaries
+\makeindex
+\indexsetup{othercode=\small}
+%\include{./glossaries-kan}
+%\makeglossaries
 
 \include{./box-def.tex}
 % commands
@@ -98,9 +101,8 @@
 \chapter{\kanfont ೧೬ ದೈವಾಸುರಸಂಪದ್ವಿಭಾಗ ಯೋಗ}
 \chapter{\kanfont ೧೭ ಶ್ರದ್ಧಾತ್ರಯವಿಭಾಗ ಯೋಗ}
 \chapter{\kanfont ೧೮ ಮೋಕ್ಷಸಂನ್ಯಾಸ ಯೋಗ}
-\input{./glossaries-kan}
-\gls{utc} is 3 hours behind \gls{adt} and 10 hours ahead of \gls{est}.
+\chapter{\kanfont ಪದ ಕೋಶ}
 
-\printglossaries
+%\printglossaries
 \printindex
 \end{document}
