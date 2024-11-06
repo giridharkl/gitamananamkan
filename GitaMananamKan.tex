@@ -1,6 +1,6 @@
 \documentclass[12pt,twoside,openright,a5paper]{book}
 \input{packages}
-
+\input{new-cmd}
 \newskip\linepagesep \linepagesep 5pt\relax
 \renewcommand\footrulewidth{0.5pt}
 \def\vfootline{%
@@ -16,7 +16,7 @@
 \newfontfamily\kannadafont[Script=Kannada]{Arial Unicode MS}
 \newfontfamily\kannadafontsf[Script=Kannada]{Arial Unicode MS}
 \newfontfamily\kanfont[Script=Kannada]{Arial Unicode MS}
-\newfontfamily\mananamfont[Script=Kannada]{NudiUni08k}
+
 \fancyhf{}
   \fancyfoot[RO]{\vfootline\hskip\linepagesep\thepage}
   \fancyfoot[LE]{\thepage\hskip\linepagesep\vfootline}
@@ -47,19 +47,15 @@
 \date{} % clear date
 \makeindex
 \indexsetup{othercode=\small}
-%\include{./glossaries-kan}
-%\makeglossaries
 
 \input{./box-def.tex}
 % commands
 \definecolor{aurometalsaurus}{rgb}{0.43, 0.5, 0.5}
-\newcommand{\slcol}[1]{{\color{red}{#1}}}
-\newcommand{\cquote}[1]{\begin{quoting}{\color{aurometalsaurus}{#1}}\end{quoting}}
-% Generate the glossary
 
 \begin{document}
 \pagenumbering{roman}
-\maketitle
+\input{./titlepage}
+
 
 \input{./chapters/copyright}
 \thispagestyle{empty}
@@ -85,9 +81,10 @@
 \chapter{\kanfont ೨ ಸಾಂಖ್ಯ ಯೋಗ}
 \input{./chapters/chap2}
 \chapter{\kanfont ೩ ಕರ್ಮ ಯೋಗ}
+\input{./chapters/chap3}
 \chapter{\kanfont ೪ ಜ್ಞಾನ ಯೋಗ}
 \chapter{\kanfont ೫ ಕರ್ಮ ಸನ್ಯಾಸ ಯೋಗ}
-\input{chapters/chap5}
+%\input{chapters/chap5}
 \chapter{\kanfont ೬ ಆತ್ಮಸಂಯಮ ಯೋಗ}
 \chapter{\kanfont ೭ ಜ್ಞಾನವಿಜ್ಞಾನ ಯೋಗ}
 \chapter{\kanfont ೮ ಅಕ್ಷರ ಬ್ರಹ್ಮ ಯೋಗ}
