@@ -1,7 +1,18 @@
 \newcommand{\slcol}[1]{{\color{MidnightBlue}{#1}}}
 \newcommand{\cquote}[1]{\begin{quoting}{\color{darkgray}{#1}}\end{quoting}}
+\newcommand\Chapter[2]{
+  \chapter[#1]{#1\\\large#2}
+}
+
 %
 % Font definitions
 %
 \newfontfamily\mananamfont[Script=Kannada]{NudiUni08k}
 \newfontfamily\mananamtext[Script=Kannada]{AdishilaVedic}
+%
+%
+%\newcommand{\chapindexpage}{\thechapter-\arabic{page}}
+%\renewcommand{\thepage}{\chapindexpage}
+%\newcommand{\chapIndex}{\thechapter-\thepage}
+\newcommand\Index[1]{#1\index{#1}}
+%\newcommand{\Index}[1]{#1\index{#1|chapIndex}}
