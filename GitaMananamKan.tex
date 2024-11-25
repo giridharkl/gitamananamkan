@@ -32,11 +32,8 @@
     \renewcommand\headrulewidth{0pt}
   }
 \quotingsetup{font={itshape,footnotesize}}
-\title{\Huge \kanfont ಗೀತಾ ಮನನಂ\\Gita Mananam\\\small(ದೈನಂದಿನ ಸ್ಪೂರ್ತಿ ಹಾಗೂ ಆತ್ಮಾವಲೋಕನಕ್ಕಾಗಿ)}
-\author{\large \kanfont ಸ್ವಾಮಿ ನಿರ್ಗುಣಾನಂದಗಿರಿ\\Swamy Nirgunanandagiri}
-
-\renewcommand*\contentsname{\kanfont ವಿಷಯ ಸೂಚಿ}
-\addto{\captionsenglish}{\renewcommand*{\contentsname}{\kanfont ವಿಷಯ ಸೂಚಿ}}
+%\title{\Huge \kanfont ಗೀತಾ ಮನನಂ\\Gita Mananam\\\small(ದೈನಂದಿನ ಸ್ಪೂರ್ತಿ ಹಾಗೂ ಆತ್ಮಾವಲೋಕನಕ್ಕಾಗಿ)}
+%\author{\large \kanfont ಸ್ವಾಮಿ ನಿರ್ಗುಣಾನಂದಗಿರಿ\\Swamy Nirgunanandagiri}
 
 % Reduce space between TOC
 \setlength\cftparskip{-2pt}
@@ -47,7 +44,7 @@
 \date{} % clear date
 \makeindex
 \indexsetup{othercode=\small}
-
+\addto\captionskannada{\renewcommand{\contentsname}{\color{blue}{ವಿಷಯ ಸೂಚಿ}}} 
 \input{./box-def.tex}
 % commands
 \definecolor{aurometalsaurus}{rgb}{0.43, 0.5, 0.5}
@@ -70,10 +67,10 @@
 \chapter{\kanfont ಮುನ್ನುಡಿ}
 
 %\thispagestyle{empty}
-\begin{onehalfspace} 
+%\begin{onehalfspace} 
 \chapter{\kanfont ಪ್ರಸ್ತಾವನೆ}
 \input{./chapters/introduction}
-\end{onehalfspace}
+\%end{onehalfspace}
 \Chapter{\kanfont ೧ ಅರ್ಜುನ ವಿಶಾದ ಯೋಗ}{ಅಥ ಪ್ರಥಮೋऽಧ್ಯಾಯಃ}
 \pagenumbering{arabic}
 \input{./chapters/chap1}
