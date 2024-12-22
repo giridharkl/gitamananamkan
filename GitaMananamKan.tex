@@ -38,11 +38,11 @@
 % Reduce space between TOC
 \setlength\cftparskip{-2pt}
 \setlength\cftbeforechapskip{2pt}
-\setcounter{secnumdepth}{-1}
+%\setcounter{secnumdepth}{-1}
 \chapterfont{\color{blue}}  % sets colour of chapters
 \setlength\parindent{0pt} % no-indent for entire file
 \date{} % clear date
-\makeindex
+\makeindex[options= -c -s custom-index.ist]
 \indexsetup{othercode=\small}
 \addto\captionskannada{\renewcommand{\contentsname}{\color{blue}{ವಿಷಯ ಸೂಚಿ}}} 
 \input{./box-def.tex}
@@ -64,13 +64,13 @@
 \thispagestyle{empty}
 \thispagestyle{empty}
 \pagestyle{fancy}
-\chapter{\kanfont ಮುನ್ನುಡಿ}
+\chapter*{\kanfont ಮುನ್ನುಡಿ}
 
 %\thispagestyle{empty}
 %\begin{onehalfspace} 
-\chapter{\kanfont ಪ್ರಸ್ತಾವನೆ}
+\chapter*{\kanfont ಪ್ರಸ್ತಾವನೆ}
 \input{./chapters/introduction}
-\%end{onehalfspace}
+%\end{onehalfspace}
 \Chapter{\kanfont ೧ ಅರ್ಜುನ ವಿಶಾದ ಯೋಗ}{ಅಥ ಪ್ರಥಮೋऽಧ್ಯಾಯಃ}
 \pagenumbering{arabic}
 \input{./chapters/chap1}
