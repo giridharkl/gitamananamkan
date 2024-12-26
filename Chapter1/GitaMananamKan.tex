@@ -1,5 +1,5 @@
 \documentclass[12pt,twoside,openright,a5paper]{book}
-\input{packages}
+\input{../packages}
 
 \newfontfamily\engfont[Script=Kannada]{Noto Serif Kannada}
 \usepackage[hpos=24mm,fontsize=32pt, hanchor=l,anchor=lc,angle=90,color={[gray]{0.5}}, text={\engfont{DRAFT \ COPY}}]{draftwatermark}
@@ -13,7 +13,7 @@
 
 
 
-\setmainfont[Script=Kannada, Renderer=HarfBuzz, LetterSpace=12]{Noto Serif Kannada}
+\setmainfont[Script=Kannada, Renderer=HarfBuzz, LetterSpace=12, Scale=1]{Noto Serif Kannada}
 \setmainlanguage[numerals=kannada]{kannada}
 \setotherlanguages{english}
 \newfontfamily\kannadafont[Script=Kannada]{Noto Serif Kannada}
@@ -21,7 +21,7 @@
 \newfontfamily\kanBold[Script=Kannada]{Noto Serif Kannada Bold}
 \newfontfamily\kanfont[Script=Kannada]{Noto Serif Kannada}
 \newfontfamily\mananamfont[Script=Kannada]{NudiUni08k}
-\newfontfamily\mananamtext[Script=Kannada]{AdishilaVedic}
+\newfontfamily\mananamtext[Script=Kannada]{Noto Serif Kannada}
 \fancyhf{}
   \fancyfoot[RO]{\vfootline\hskip\linepagesep\thepage}
   \fancyfoot[LE]{\thepage\hskip\linepagesep\vfootline}
@@ -65,8 +65,8 @@
 \input{./box-def.tex}
 % commands
 \definecolor{aurometalsaurus}{rgb}{0.43, 0.5, 0.5}
-\newcommand{\slcol}[1]{{\color{MidnightBlue}{#1}}}
-\newcommand{\cquote}[1]{\begin{quoting}{\color{black}{#1}}\end{quoting}}
+\newcommand{\slcol}[1]{{\normalsize\color{Blue}{#1}}}
+\newcommand{\cquote}[1]{\begin{quoting}{\footnotesize\color{black}{#1}}\end{quoting}}
 %\input{./index-page}
 \renewcommand{\cftchapfont}{\normalfont}
 \renewcommand{\cftchappagefont}{\normalfont}
