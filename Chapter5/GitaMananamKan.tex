@@ -1,0 +1,118 @@
+\documentclass[12pt,twoside,openright,a5paper]{book}
+\input{packages}
+
+\newfontfamily\engfont[Script=Kannada]{Noto Serif Kannada}
+\usepackage[hpos=24mm,fontsize=32pt, hanchor=l,anchor=lc,angle=90,color={[gray]{0.5}}, text={\engfont{DRAFT \ COPY}}]{draftwatermark}
+
+\newskip\linepagesep \linepagesep 5pt\relax
+\renewcommand\footrulewidth{0.5pt}
+\def\vfootline{%
+    \begingroup
+        \color{blue}\rule[-990pt]{20pt}{1000pt}
+    \endgroup}
+
+
+
+\setmainfont[Script=Kannada, Renderer=HarfBuzz]{Noto Serif Kannada}
+\setmainlanguage[numerals=kannada]{kannada}
+\setotherlanguages{english}
+\newfontfamily\kannadafont[Script=Kannada]{Noto Serif Kannada}
+\newfontfamily\kannadafontsf[Script=Kannada]{Noto Serif Kannada}
+\newfontfamily\kanBold[Script=Kannada]{Noto Serif Kannada Bold}
+\newfontfamily\kanfont[Script=Kannada]{Noto Serif Kannada}
+\newfontfamily\mananamfont[Script=Kannada]{NudiUni08k}
+\newfontfamily\mananamtext[Script=Kannada]{AdishilaVedic}
+\fancyhf{}
+  \fancyfoot[RO]{\vfootline\hskip\linepagesep\thepage}
+  \fancyfoot[LE]{\thepage\hskip\linepagesep\vfootline}
+  \fancyhead[RO]{\small\kanfont ದಿನಾಂಕ ..../..../.....}
+  \fancyhead[LO]{\small\kanfont ಗೀತಾ ಮನನಂ}
+  \fancyhead[LE]{\small\kanfont ಗೀತಾ ಮನನಂ}
+  \fancyhead[RE]{\small\kanfont ದಿನಾಂಕ ..../..../.....}
+  \renewcommand\headrulewidth{1pt}
+  \fancypagestyle{plain}{%
+    \fancyhf{}
+    \fancyfoot[RO]{\vfootline\hskip\linepagesep\thepage}
+    \fancyfoot[LE]{\thepage\hskip\linepagesep\vfootline}
+    \renewcommand\headrulewidth{0pt}
+  }
+\quotingsetup{font={itshape,footnotesize}}
+\title{\Huge \kanfont \textbf{ಗೀತಾ ಮನನಂ}\\
+{\normalsize Gita Mananam\\}
+{\small(ದೈನಂದಿನ ಸ್ಪೂರ್ತಿ ಹಾಗೂ ಆತ್ಮಾವಲೋಕನಕ್ಕಾಗಿ)}}
+\author{\large \kanfont ಸ್ವಾಮಿ ನಿರ್ಗುಣಾನಂದಗಿರಿ\\
+{\normalsize Swamy Nirgunanandagiri}\\
+\vspace{15mm}
+{\normalsize Bhageeratha Publications}\\
+{Rishikesh, India}
+}
+
+
+\addto\captionskannada{\renewcommand{\contentsname}{\color{blue}{ವಿಷಯ ಸೂಚಿ}}} 
+
+% Reduce space between TOC
+\setlength\cftparskip{-2pt}
+\setlength\cftbeforechapskip{2pt}
+\setcounter{secnumdepth}{-1}
+\chapterfont{\color{blue}}  % sets colour of chapters
+\setlength\parindent{0pt} % no-indent for entire file
+\date{} % clear date
+\makeindex
+\indexsetup{othercode=\small}
+%\include{./glossaries-kan}
+%\makeglossaries
+
+\input{./box-def.tex}
+% commands
+\definecolor{aurometalsaurus}{rgb}{0.43, 0.5, 0.5}
+\newcommand{\slcol}[1]{{\color{MidnightBlue}{#1}}}
+\newcommand{\cquote}[1]{\begin{quoting}{\color{black}{#1}}\end{quoting}}
+%\input{./index-page}
+\renewcommand{\cftchapfont}{\normalfont}
+\renewcommand{\cftchappagefont}{\normalfont}
+%column decoration
+\setlength{\columnseprule}{1pt}
+\def\columnseprulecolor{\color{blue}}
+
+\begin{document}
+
+\pagenumbering{roman}
+\input{./frontcover}
+\input{./titlepage}
+%\maketitle
+
+\input{./chapters/copyright}
+\thispagestyle{empty}
+\frontmatter
+
+\doublespacing
+\tableofcontents
+\singlespacing
+\input{./ganapa}
+\thispagestyle{empty}
+\thispagestyle{empty}
+\pagestyle{fancy}
+
+
+\chapter{\kanfont ಮುನ್ನುಡಿ}
+\input{../preface}
+%\thispagestyle{empty}
+\begin{onehalfspace}
+\chapter{\kanfont ಪ್ರಸ್ತಾವನೆ}
+\input{../introduction}
+\end{onehalfspace}
+\mainmatter
+%\input{./chapters/chap1}
+\chapter{\kanfont ೫ ಕರ್ಮ ಸನ್ಯಾಸ ಯೋಗ}
+\pagenumbering{arabic}
+%\renewcommand* \thepage {\localnumeral*{page}} %Page numbers in Kannada
+%\input{./chapters/chap1}
+\makeatletter\@openrightfalse
+%\chapter{\kanfont ೨ ಸಾಂಖ್ಯ ಯೋಗ}
+\input{./chapters/chap5}
+
+\chapter{\kanfont ಪದ ಕೋಶ}
+\input{./glossaries-kan.tex}
+\printindex
+\input{./backcover.tex}
+\end{document}
