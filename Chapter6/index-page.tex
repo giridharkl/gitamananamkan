@@ -1,0 +1,18 @@
+% Custom macro to convert Arabic numerals to Kannada numerals
+\makeatletter
+\newcommand{\converttoKannada}[1]{%
+  \ifcase#1 ೦\or ೧\or ೨\or ೩\or ೪\or ೫\or ೬\or ೭\or ೮\or ೯\else\expandafter\converttoKannadaLoop\fi
+}
+\newcommand{\converttoKannadaLoop}[1]{%
+  \expandafter\converttoKannada\expandafter{\the\numexpr#1/10}\converttoKannada{\the\numexpr#1\mod10}%
+}
+\makeatother
+
+% Redefine page numbering globally to use Kannada numerals
+\renewcommand{\thepage}{\converttoKannada{\arabic{page}}}
+
+% Redefine index page numbers (the page numbers shown in the index itself)
+\renewcommand{\index}{\@ifnextchar[{\@indexwithpage}{\@indexwithoutpage}}
+
+\def\@indexwithpage[#1]#2{\indexentry{#2}{\converttoKannada{#1}}}
+\def\@indexwithoutpage#1{\indexentry{#1}{\converttoKannada{\thepage}}}
