@@ -1,20 +1,55 @@
-\newcommand{\slcol}[1]{{\color{MidnightBlue}{#1}}}
-\newcommand{\cquote}[1]{\begin{quoting}{\color{darkgray}{#1}}\end{quoting}}
+%\newcommand{\slcol}[1]{{\color{MidnightBlue}{#1}}}
+%\newcommand{\cquote}[1]{\begin{quoting}{\color{darkgray}{#1}}\end{quoting}}
+%\newcommand\Chapter[2]{
+%  \chapter[#1]{#1\\\large#2}
+%}
 \newcommand\Chapter[2]{
-  \chapter[#1]{#1\\\large#2}
+  \chapter[#1 #2]{#1\\\Large{#2}}
+  \vspace{-10mm}
+  \newpgfornamentfamily{vectorian}
+  \begin{center}
+    
+    \pgfornament[anchor=center,ydelta=0pt,width=5cm, color=black]{84}
+  \end{center}
+  %print different header for each chapter
+  \fancyhead[RO]{\footnotesize \kanfont ಗೀತಾ ಮನನಂ} %Odd page Right
+  \fancyhead[LO]{\footnotesize #1} % Odd page Left
+  \fancyhead[LE]{\footnotesize \kanfont ಗೀತಾ ಮನನಂ} %Even page Left
+  \fancyhead[RE]{\footnotesize #1} %Even page Right
+}
+
+\newcommand\NewHeader[1]{
+  %print different header for each chapter
+  \fancyhead[RO]{\footnotesize \kanfont ಗೀತಾ ಮನನಂ} %Odd page Right
+  \fancyhead[LO]{\footnotesize #1} % Odd page Left
+  \fancyhead[LE]{\footnotesize \kanfont ಗೀತಾ ಮನನಂ} %Even page Left
+  \fancyhead[RE]{\footnotesize #1} %Even page Right
 }
 %
 %\addto\captionskannada{\renewcommand{\contentsname}{\color{blue}{ವಿಷಯ ಸೂಚಿ}}}
 %
 % Font definitions
 %
-\newfontfamily\mananamfont[Script=Kannada]{NudiUni08k}
-\newfontfamily\mananamtext[Script=Kannada]{AdishilaVedic}
+%\newfontfamily\mananamfont[Script=Kannada]{NudiUni08k}
+%\newfontfamily\mananamtext[Script=Kannada]{AdishilaVedic}
 %\newfontfamily\engfont[Script=Kannada]{Arial Unicode MS}
 %
 %
 %\newcommand{\chapindexpage}{\thechapter-\arabic{page}}
 %\renewcommand{\thepage}{\chapindexpage}
 %\newcommand{\chapIndex}{\thechapter-\thepage}
-\newcommand\Index[1]{#1\index{#1, \thechapter}}
+%\newcommand\Index[1]{#1\index{#1, \thechapter}}
 %\newcommand{\Index}[1]{#1\index{#1|chapIndex}}
+\newcommand\chapEnd{
+  \begin{center}
+    \newpgfornamentfamily{vectorian}
+    \pgfornament[anchor=center,ydelta=0pt,width=5cm, color=black]{85}  
+  \end{center}
+}
+\newcommand{\chapEndSloka}[1]{
+  \begin{center}
+    {\color{black}\small
+    ಇತಿ ಶ್ರೀಮದ್ಭಗವದ್ಗೀತಾ  ರೂಪೀ ಉಪನಿಷತ್, ಬ್ರಹ್ಮವಿದ್ಯಾ, ಯೋಗಶಾಸ್ತ್ರ\\ ವಿಷಯವಾಗಿ ಶ್ರೀಕೃಷ್ಣ ಹಾಗೂ ಅರ್ಜುನರ ಸಂವಾದದಲ್ಲಿ, \\‘#1’ ಎಂಬ ಅಧ್ಯಾಯ  ಸಂಪೂರ್ಣ}
+  \end{center}
+  \chapEnd
+}
