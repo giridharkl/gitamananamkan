@@ -4,12 +4,12 @@
 %  \chapter[#1]{#1\\\large#2}
 %}
 \newcommand\Chapter[2]{
-  \chapter[#1 #2]{#1\\\Large{#2}}
+  \chapter[#1 #2]{#1\\\rightline{\Large{#2}}}
   \vspace{-10mm}
   \newpgfornamentfamily{vectorian}
   \begin{center}
     
-    \pgfornament[anchor=center,ydelta=0pt,width=5cm, color=black]{84}
+    \pgfornament[anchor=center,ydelta=0pt,width=5cm, color=\chapBeginSymColor]{84}
   \end{center}
   %print different header for each chapter
   \fancyhead[RO]{\footnotesize \kanfont ಗೀತಾ ಮನನಂ} %Odd page Right
@@ -43,7 +43,7 @@
 \newcommand\chapEnd{
   \begin{center}
     \newpgfornamentfamily{vectorian}
-    \pgfornament[anchor=center,ydelta=0pt,width=5cm, color=black]{85}  
+    \pgfornament[anchor=center,ydelta=0pt,width=5cm, color=\chapEndSymColor]{85}  
   \end{center}
 }
 \newcommand{\chapEndSloka}[1]{

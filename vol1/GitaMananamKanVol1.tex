@@ -1,6 +1,6 @@
 \documentclass[12pt,twoside,openany]{book}
 \input{../packages}
-
+\input{../color-def}
 \newfontfamily\engfont[Script=Kannada]{Noto Serif Kannada}
 %\usepackage[hpos=24mm,fontsize=32pt, hanchor=l,anchor=lc,angle=90,color={[gray]{0.5}}, text={\engfont{DRAFT \ COPY}}]{draftwatermark}
 
@@ -51,13 +51,13 @@
 }
 
 
-\addto\captionskannada{\renewcommand{\contentsname}{\color{black}{ವಿಷಯ ಸೂಚಿ}}} 
+\addto\captionskannada{\renewcommand{\contentsname}{\chapColor{ವಿಷಯ ಸೂಚಿ}}} 
 
 % Reduce space between TOC
 \setlength\cftparskip{-2pt}
 \setlength\cftbeforechapskip{2pt}
 \setcounter{secnumdepth}{-1}
-\chapterfont{\color{black}}  % sets colour of chapters
+\chapterfont{\chapColor} % sets colour of chapters
 \setlength\parindent{0pt} % no-indent for entire file
 \date{} % clear date
 \makeindex
@@ -68,7 +68,7 @@
 \input{../box-def.tex}
 % commands
 \definecolor{aurometalsaurus}{rgb}{0.43, 0.5, 0.5}
-\newcommand{\slcol}[1]{\parbox{10.9cm}{\vspace{3mm}\normalsize\color{black}\textbf{#1}\vspace{1mm}}}
+\newcommand{\slcol}[1]{\parbox{10.9cm}{\vspace{3mm}\normalsize\slokaColor\textbf{#1}\vspace{1mm}}}
 \newcommand{\cquote}[1]{\parbox{10.9cm}{\begin{quoting}{\normalsize\color{black}{#1}}\end{quoting}}}
 %\input{./index-page}
 \renewcommand{\cftchapfont}{\normalfont}
@@ -80,7 +80,7 @@
 \begin{document}
 \sloppy % full justify without hyphenation
 \pagenumbering{roman}
-\input{./frontcover}
+%\input{./frontcover}
 \input{./titlepage}
 %\maketitle
 \input{./copyright}
@@ -114,6 +114,7 @@
 \input{./chapters.tex}
 \NewHeader{ಸೂಚಿ}
 \printindex
-
-\input{./backcover.tex}
+\let\cleardoublepage\clearpage
+\input{./back-cover-inner.tex}
+%\input{./backcover.tex}
 \end{document}
