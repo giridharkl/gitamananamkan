@@ -1,0 +1,123 @@
+\documentclass[12pt,twoside,openany]{book}
+\input{../packages}
+\input{../color-def}
+\newfontfamily\engfont[Script=Kannada]{Noto Serif Kannada}
+%\usepackage[hpos=24mm,fontsize=32pt, hanchor=l,anchor=lc,angle=90,color={[gray]{0.5}}, text={\engfont{DRAFT \ COPY}}]{draftwatermark}
+
+\newskip\linepagesep \linepagesep 5pt\relax
+\renewcommand\footrulewidth{0.5pt}
+\def\vfootline{%
+    \begingroup
+        \color{black}\rule[-990pt]{20pt}{1000pt}
+    \endgroup}
+
+
+
+\setmainfont[Script=Kannada, Renderer=HarfBuzz, LetterSpace=12, Scale=1]{Noto Serif Kannada}
+\setmainlanguage[numerals=kannada]{kannada}
+\setotherlanguages{english}
+\newfontfamily\kannadafont[Script=Kannada]{Noto Serif Kannada}
+\newfontfamily\kannadafontsf[Script=Kannada]{Noto Serif Kannada}
+\newfontfamily\kanBold[Script=Kannada]{Noto Serif Kannada Bold}
+\newfontfamily\kanItalic[Script=Kannada]{NudiUni01k}
+\newfontfamily\kanfont[Script=Kannada]{Noto Serif Kannada}
+\newfontfamily\mananamfont[Script=Kannada]{Noto Serif Kannada}
+\newfontfamily\mananamtext[Script=Kannada]{Noto Serif Kannada}
+\newfontfamily\akayaKan[Script=Kannada]{Akaya Kanadaka}
+\newfontfamily\tiroKan[Script=Kannada]{Tiro Kannada}
+\fancyhf{}
+  \fancyfoot[RO]{\hskip\linepagesep\thepage}
+  \fancyfoot[LE]{\thepage\hskip\linepagesep}
+  \fancyhead[RO]{\footnotesize \kanfont ದೈನಂದಿನ ಸ್ಪೂರ್ತಿಗಾಗಿ}
+  \fancyhead[LO]{\footnotesize \kanfont ಗೀತಾ ಮನನಂ}
+  \fancyhead[LE]{\footnotesize \kanfont ಗೀತಾ ಮನನಂ}
+  \fancyhead[RE]{\footnotesize \kanfont ದೈನಂದಿನ ಸ್ಪೂರ್ತಿಗಾಗಿ}
+  \renewcommand\headrulewidth{1pt}
+  \fancypagestyle{plain}{%
+    \fancyhf{}
+    \fancyfoot[RO]{\hskip\linepagesep\thepage}
+    \fancyfoot[LE]{\thepage\hskip\linepagesep}
+    \renewcommand\headrulewidth{0pt}
+  }
+\quotingsetup{font={itshape,footnotesize}}
+\title{\Huge \kanfont \textbf{ಗೀತಾ ಮನನಂ}\\
+{\normalsize Gita Mananam\\}
+{\small(ದೈನಂದಿನ ಸ್ಪೂರ್ತಿ ಹಾಗೂ ಆತ್ಮಾವಲೋಕನಕ್ಕಾಗಿ)}}
+\author{\large \kanfont ಸ್ವಾಮಿ ನಿರ್ಗುಣಾನಂದಗಿರಿ\\
+{\normalsize Swamy Nirgunanandagiri}\\
+\vspace{15mm}
+{\normalsize Bhageeratha Publications}\\
+{Rishikesh, India}
+}
+
+
+\addto\captionskannada{\renewcommand{\contentsname}{\chapColor{ವಿಷಯ ಸೂಚಿ}}} 
+
+% Reduce space between TOC
+\setlength\cftparskip{-2pt}
+\setlength\cftbeforechapskip{2pt}
+\setcounter{secnumdepth}{-1}
+\chapterfont{\chapColor} % sets colour of chapters
+\setlength\parindent{0pt} % no-indent for entire file
+\date{} % clear date
+\makeindex
+\indexsetup{othercode=\small}
+%\include{./glossaries-kan}
+%\makeglossaries
+\input{../new-cmd.tex}
+\input{../box-def.tex}
+% commands
+\definecolor{aurometalsaurus}{rgb}{0.43, 0.5, 0.5}
+\newcommand{\slcol}[1]{\parbox{10.9cm}{\vspace{3mm}\normalsize\slokaColor\textbf{#1}\vspace{1mm}}}
+\newcommand{\cquote}[1]{\parbox{10.9cm}{\begin{quoting}{\normalsize\color{black}{#1}}\end{quoting}}}
+\newcommand{\mananamTitle}[1]{\mananamfont \large \large {#1}}
+\newcommand{\sReflect}{\WritingHand\enspace\textbf{ಆತ್ಮ ವಿಮರ್ಶೆ}}
+\newcommand{\nfntmtxt}{\normalsize \mananamtext}
+%\input{./index-page}
+\renewcommand{\cftchapfont}{\normalfont}
+\renewcommand{\cftchappagefont}{\normalfont}
+%column decoration
+\setlength{\columnseprule}{1pt}
+\def\columnseprulecolor{\color{black}}
+
+\begin{document}
+\sloppy % full justify without hyphenation
+\pagenumbering{roman}
+%\input{./frontcover}
+\input{./titlepage}
+%\maketitle
+\input{./copyright}
+\thispagestyle{empty}
+\frontmatter
+
+\doublespacing
+\tableofcontents
+\singlespacing
+\input{./ganapa}
+\thispagestyle{empty}
+\thispagestyle{empty}
+\pagestyle{fancy}
+
+\begin{onehalfspace}
+\chapter{\kanfont ಮುನ್ನುಡಿ}
+\input{../preface}
+%\thispagestyle{empty}
+\chapter{\kanfont ಪ್ರಸ್ತಾವನೆ}
+\input{../introduction}
+\chapter{\kanfont ಮನನಂ ಮಾರ್ಗದರ್ಶಿ}
+\input{../HowToUse}
+\end{onehalfspace}
+\mainmatter
+\pagenumbering{arabic}
+\makeatletter\@openrightfalse
+
+
+%\renewcommand* \thepage {\localnumeral*{page}} %Page numbers in Kannada
+
+\input{./chapters.tex}
+\NewHeader{ಸೂಚಿ}
+\printindex
+\let\cleardoublepage\clearpage
+\input{./back-cover-inner.tex}
+%\input{./backcover.tex}
+\end{document}
